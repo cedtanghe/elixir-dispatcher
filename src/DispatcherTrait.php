@@ -2,7 +2,6 @@
 
 namespace Elixir\Dispatcher;
 
-use Elixir\Dispatcher\DispatcherInterface;
 use Elixir\Dispatcher\Event;
 use Elixir\Dispatcher\SubscriberInterface;
 
