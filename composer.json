@@ -1,5 +1,5 @@
 {
-    "name": "elixir/elixir-dispatcher",
+    "name": "cedtanghe/elixir-dispatcher",
     "description": "Component event manager",
     "version": "1.0.0",
     "minimum-stability": "dev",
