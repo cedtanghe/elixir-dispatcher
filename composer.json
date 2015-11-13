@@ -1,5 +1,5 @@
 {
-    "name": "elixir/elixir-di",
+    "name": "elixir/elixir-dispatcher",
     "description": "Component event manager",
     "license": "BSD-3-Clause",
     "keywords": [
@@ -7,6 +7,8 @@
         "dispatcher"
     ],
     "homepage": "https://github.com/cedtanghe/elixir-dispatcher",
+    "repositories": [
+    ],
     "require": {
         "php": ">=5.4"
     },
