@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="TestJenkins" default="ci" basedir="./">
+<project name="Jenkins" default="ci" basedir="./">
     <property name="source" value="src" />
     
     <target name="ci" description="Base task" depends="clean,qa"/>
@@ -14,6 +14,6 @@
     </target>
     
     <target name="phpunit">
-        <exec logoutput="true" dir="${project.basedir}/tests" command="phpunit" escape="false" />
+        <exec logoutput="true" dir="${project.basedir}" command="phpunit" escape="false" />
     </target>
 </project>
