@@ -3,6 +3,9 @@
     <property name="source" value="src" />
     <target name="ci" description="Base task" depends="clean,qa"/>
 
-    <target name="clean" description="clean folders"></target>
+    <target name="clean" description="clean folders">
+        <delete dir="${project.basedir}/build/logs" />
+        <mkdir dir="${project.basedir}/build/logs" />
+    </target>
     <target name="qa" description="Launch analyzers"></target>
 </project>
