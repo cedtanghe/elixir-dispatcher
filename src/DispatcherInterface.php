@@ -2,12 +2,10 @@
 
 namespace Elixir\Dispatcher;
 
-use Elixir\Dispatcher\SubscriberInterface;
-
 /**
  * @author Cédric Tanghe <ced.tanghe@gmail.com>
  */
-interface DispatcherInterface 
+interface DispatcherInterface
 {
     /**
      * @param SubscriberInterface $subscriber
@@ -18,43 +16,41 @@ interface DispatcherInterface
      * @param SubscriberInterface $subscriber
      */
     public function removeSubscriber(SubscriberInterface $subscriber);
-    
+
     /**
-     * @param string $type 
-     * @return boolean
+     * @param string $type
+     *
+     * @return bool
      */
     public function hasListener($type);
-    
+
     /**
-     * @param string $type
+     * @param string   $type
      * @param callable $callback
-     * @param integer $priority 
+     * @param int      $priority
      */
     public function addListener($type, callable $callback, $priority = 0);
-    
+
     /**
-     * @param string $type
-     * @param callable $callback 
+     * @param string   $type
+     * @param callable $callback
      */
     public function removeListener($type, callable $callback = null);
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function hasListeners();
-    
+
     /**
      * @return array
      */
     public function getListeners();
-    
-    /**
-     * @return void
-     */
+
     public function removeListeners();
-    
+
     /**
-     * @param Event $event 
+     * @param Event $event
      */
     public function dispatch(Event $event);
 }

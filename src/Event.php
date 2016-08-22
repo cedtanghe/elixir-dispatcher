@@ -5,7 +5,7 @@ namespace Elixir\Dispatcher;
 /**
  * @author Cédric Tanghe <ced.tanghe@gmail.com>
  */
-class Event 
+class Event
 {
     /**
      * @var string
@@ -18,22 +18,22 @@ class Event
     protected $target;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $stopPropagation = false;
 
     /**
-     * @param string $type 
+     * @param string $type
      */
-    public function __construct($type) 
+    public function __construct($type)
     {
         $this->type = $type;
     }
 
     /**
-     * @return string 
+     * @return string
      */
-    public function getType() 
+    public function getType()
     {
         return $this->type;
     }
@@ -41,31 +41,28 @@ class Event
     /**
      * @return mixed
      */
-    public function getTarget() 
+    public function getTarget()
     {
         return $this->target;
     }
 
     /**
-     * @param mixed $value 
+     * @param mixed $value
      */
-    public function setTarget($value) 
+    public function setTarget($value)
     {
         $this->target = $value;
     }
 
     /**
-     * @return boolean 
+     * @return bool
      */
-    public function isStopped() 
+    public function isStopped()
     {
         return $this->stopPropagation;
     }
 
-    /**
-     * @return void
-     */
-    public function stopPropagation() 
+    public function stopPropagation()
     {
         $this->stopPropagation = true;
     }

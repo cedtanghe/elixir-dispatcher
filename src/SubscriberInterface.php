@@ -2,12 +2,10 @@
 
 namespace Elixir\Dispatcher;
 
-use Elixir\Dispatcher\DispatcherInterface;
-
 /**
  * @author Cédric Tanghe <ced.tanghe@gmail.com>
  */
-interface SubscriberInterface 
+interface SubscriberInterface
 {
     /**
      * @param DispatcherInterface $dispatcher
