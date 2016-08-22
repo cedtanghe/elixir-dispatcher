@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="TestJenkins" default="ci" basedir="../../">
+<project name="TestJenkins" default="ci" basedir="./">
     <property name="source" value="src" />
+    
     <target name="ci" description="Base task" depends="clean,qa"/>
 
     <target name="clean" description="clean folders">
-        <delete dir="${project.basedir}/build/logs" />
-        <mkdir dir="${project.basedir}/build/logs" />
+        <delete dir="${project.basedir}/utils/build/logs" />
+        <mkdir dir="${project.basedir}/utils/build/logs" />
     </target>
-    <target name="qa" description="Launch analyzers"></target>
+    
+    <target name="qa" description="Launch analyzers">
+        <phingcall target="phpunit" />
+    </target>
+    
+    <target name="phpunit">
+        <exec logoutput="true" dir="${project.basedir}/tests" command="phpunit" escape="false" />
+    </target>
 </project>
