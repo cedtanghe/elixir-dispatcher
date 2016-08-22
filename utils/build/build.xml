@@ -11,6 +11,7 @@
     
     <target name="qa" description="Launch analyzers">
         <phingcall target="composer" />
+        <phingcall target="phpcs" />
         <phingcall target="phpunit" />
     </target>
     
