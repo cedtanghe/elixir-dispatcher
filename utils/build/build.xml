@@ -21,4 +21,13 @@
     <target name="phpunit">
         <exec logoutput="true" dir="${project.basedir}" command="phpunit" escape="false" />
     </target>
+    
+    <target name="phpcs">
+        <phpcodesniffer standard="Zend">
+            <fileset dir="${project.basedir}/${source}">
+                <include name="**/*.php"/>
+            </fileset>
+            <formatter type="checkstyle" outfile="${project.basedir}/utils/build/logs/checkstyle.xml"/>
+        </phpcodesniffer>
+    </target>
 </project>
