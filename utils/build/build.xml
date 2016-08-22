@@ -10,7 +10,12 @@
     </target>
     
     <target name="qa" description="Launch analyzers">
+        <phingcall target="composer" />
         <phingcall target="phpunit" />
+    </target>
+    
+    <target name="composer">
+        <exec logoutput="true" dir="${project.basedir}" command="php composer.phar install" escape="false" />
     </target>
     
     <target name="phpunit">
