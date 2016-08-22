@@ -15,7 +15,7 @@
     </target>
     
     <target name="composer">
-        <exec logoutput="true" dir="${project.basedir/utils/build}" command="php composer.php" escape="false" />
+        <exec logoutput="true" dir="${project.basedir}/utils/build}" command="php composer.php" escape="false" />
     </target>
     
     <target name="phpunit">
