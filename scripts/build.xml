@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="TestJenkins" default="ci" basedir="../">
+    <property name="source" value="src" />
+    <target name="ci" description="Base task" depends="clean,qa"/>
+
+    <target name="clean" description="clean folders"></target>
+    <target name="qa" description="Launch analyzers"></target>
+</project>
