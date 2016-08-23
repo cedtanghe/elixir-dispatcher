@@ -4,7 +4,10 @@ php:
   - '7.0'
   - hhvm
   - nightly
-install:
-   - composer install
+before_script:
+    - composer self-update
+    - composer install
 script:
-   - phpunit
+    - phpunit
+notifications:
+    email: false
