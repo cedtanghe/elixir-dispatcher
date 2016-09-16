@@ -92,7 +92,8 @@
 
     <target name="vendors" depends="composer" description="Install vendors">
         <exec executable="${basedir}/composer.phar" failonerror="true">
-            <arg value="install --dev" />
+            <arg value="install" />
+            <arg value="--dev" />
         </exec>
     </target>
 
