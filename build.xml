@@ -10,19 +10,19 @@
     <property name="phpunit" value="${basedir}/vendor/bin/phpunit"/>
 
     <target name="full-build"
-            depends="prepare,static-analysis,phpunit,phpdox,-check-failure"
+            depends="prepare,vendors,static-analysis,phpunit,phpdox,-check-failure"
             description="Performs static analysis, runs the tests, and generates project documentation"/>
 
     <target name="full-build-parallel"
-            depends="prepare,static-analysis-parallel,phpunit,phpdox,-check-failure"
+            depends="prepare,vendors,static-analysis-parallel,phpunit,phpdox,-check-failure"
             description="Performs static analysis (executing the tools in parallel), runs the tests, and generates project documentation"/>
 
     <target name="quick-build"
-            depends="prepare,lint,phpunit-no-coverage"
+            depends="prepare,vendors,lint,phpunit-no-coverage"
             description="Performs a lint check and runs the tests (without generating code coverage reports)"/>
 
     <target name="static-analysis"
-            depends="lint,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci"
+            depends="vendors,lint,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci"
             description="Performs static analysis" />
 
     <!-- Adjust the threadCount attribute's value to the number of CPUs -->
@@ -83,7 +83,7 @@
         <property name="lint.done" value="true"/>
     </target>
  
-    <target name="composer" depends="prepare" description="Install composer.phar">
+    <target name="composer" description="Install composer.phar">
         <exec executable="bash">
             <arg value="-c"/>
             <arg value="curl -s http://getcomposer.org/installer | php"/>
