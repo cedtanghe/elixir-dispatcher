@@ -10,11 +10,11 @@
     <property name="phpunit" value="${basedir}/vendor/bin/phpunit"/>
 
     <target name="full-build"
-            depends="prepare,vendors,static-analysis,phpunit,-check-failure"
+            depends="prepare,vendors,static-analysis,phpunit,phpdox,-check-failure"
             description="Performs static analysis, runs the tests, and generates project documentation"/>
 
     <target name="full-build-parallel"
-            depends="prepare,vendors,static-analysis-parallel,phpunit,-check-failure"
+            depends="prepare,vendors,static-analysis-parallel,phpunit,phpdox,-check-failure"
             description="Performs static analysis (executing the tools in parallel), runs the tests, and generates project documentation"/>
 
     <target name="quick-build"
@@ -93,7 +93,6 @@
     <target name="vendors" depends="composer" description="Install vendors">
         <exec executable="${basedir}/composer.phar" failonerror="true">
             <arg value="install" />
-            <arg value="--dev" />
         </exec>
     </target>
 
